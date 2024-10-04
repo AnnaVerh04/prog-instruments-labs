@@ -7,9 +7,9 @@ import time
 from tqdm import tqdm
 
 
-# Thsi function is designed for the INTRODUCTION TO OUR CALCULATOR PROGRAM
+# This function is designed for the INTRODUCTION TO OUR CALCULATOR PROGRAM
 
-def Welcome():
+def welcome():
     print("\n\n---------------------------------------------------------", end="")
     print("\n|\n|  Welcome to the scientific Calculator app .....  \t|", end="\n")
     print("|\n| MADE BY:  ", " SHOURYA PANT(0105CS191109) \t\t|", end="\n")
@@ -23,7 +23,7 @@ def Welcome():
 
 # This function is designed for performing the ADDITION OF n numbers
 
-def Addition():
+def addition():
     print("how many nums to add")
     number = int(input())
     sum = 0
@@ -36,7 +36,7 @@ def Addition():
 
 # This function is designed for performing the SUBTRACTION of n numbers
 
-def Subtraction():
+def subtraction():
     print("\n For How many variables You want to do subtraction?", end="\n")
     No_of_variable = int(input("\n Enter the Total number of Operands... "))
     if No_of_variable == 1:
@@ -66,7 +66,7 @@ def Subtraction():
 
 # This function is designed to perform MULTIPLICATION of two or more numbers
 
-def Multiplication():
+def multiplication():
     print("\n How many numbers do you want to get MULTIPLY ???", end="\n")
     choice = int(input("\n Enter Total number of Multiplicands :"))
     if choice == 1:
@@ -95,7 +95,7 @@ def Multiplication():
 
 # This function is designed to perform DIVISION of two numbers
 
-def Division():
+def division():
     print("\n 1. Do the division for the integers numbers ", end="\n")
     print("\n 2. Do the division for the floating point numbers ", end="\n")
     choice = int(input("\n Enter 1 or 2 "))
@@ -124,7 +124,7 @@ def Division():
 
 # This funciton is designed for CALCULATING THE MODULUS OF the numbers
 
-def Modulus():
+def modulus():
     x = float(input("\n Enter  First number : "))
     y = float(input("\n Enter divisor : "))
     modulus = x % y
@@ -133,7 +133,7 @@ def Modulus():
 
 # This function is designed for CALCULATING THE POWERS taking BASE AND  EXPONENTIAL  values from the user
 
-def Powers_Exponents():
+def powers_exponents():
     Base = float(input("\n Enter the Base NUmber whose powers you have to calculate : "))
     exponent = float(input("\n Enter the exponent Number which will be given as power to base  : "))
     power = Base ** exponent
@@ -142,7 +142,7 @@ def Powers_Exponents():
 
 # This function is designed to CALCULATE THE ROOTS OF A NUMBER OR 1/NTH POWER OF A NUMBER
 
-def Calculating_Roots():
+def calculating_roots():
     Number = float(input("\n Enter the number whose root you want to find : "))
     exponent = float(input("\n Which Root You want ? "))
     result = pow(Number, 1 / exponent)
@@ -156,7 +156,7 @@ def Calculating_Roots():
 
 # This function is designed to calculate the FACTORIAL OF A NUMBER
 
-def Factorial():
+def factorial():
     factorial = 1
     Number = float(input("\n Enter a Number whose factorial You want to be Calculated : "))
     if (Number >= 1) and Number.is_integer() == True:
@@ -173,7 +173,7 @@ def Factorial():
 
 # This function is designed to calculate the TRIGNOMETRY
 
-def Trignometry():
+def trigonometry():
     print(
         "\n WHICH TRIGNOMETRIC FUNCTION DO YOU WANT TO USE \n\n 1. SIN \n 2. COS \n 3. TAN \n 4. SEC \n 5. COSEC \n 6. COT ",
         end="\n")
@@ -218,7 +218,7 @@ def logarithms():
 
 # This function  is designed for calculating the EUCLEDIAN DISTANCE BETWEEN TWO POINTS
 
-def Eucledian_distance():
+def euclidean_distance():
     x1 = float(input("\n Enter the x coordinate of the first point (x1) "))
     x2 = float(input("\n Enter the x coordinate of the second point (x2) "))
     y1 = float(input("\n Enter the y coordinate of the first point (y1) "))
@@ -230,7 +230,7 @@ def Eucledian_distance():
 
 # This function is designed to CALCULATE AREA OF DIFFERENT POLYGONS
 
-def Area():
+def area():
     print(
         "\n Which Figure Area do you want to calculate ? \n\n 1. RECTANGLE \n 2. SQUARE \n 3. TRIANGLE \n 4. CIRCLE \n 5. REGULAR POLYGON  ",
         end="\n")
@@ -260,8 +260,8 @@ def Area():
 
 #  THE MAIN MENU
 
-def Calculator():
-    Welcome()
+def calculator():
+    welcome()
     print("\n What do you want to do with our calculator ?", end="\n")
     print("\n MAIN MENU : ", end="\n\n")
     print("\n 1. ADDING NUMBERS TWO OR MORE ", end="\n")
@@ -280,29 +280,29 @@ def Calculator():
     choice = int(input("Please Enter a Choice(1-12) what you want to do ??"))
 
     if choice == 1:
-        Addition()
+        addition()
     elif choice == 2:
-        Subtraction()
+        subtraction()
     elif choice == 3:
-        Multiplication()
+        multiplication()
     elif choice == 4:
-        Division()
+        division()
     elif choice == 5:
-        Modulus()
+        modulus()
     elif choice == 6:
-        Powers_Exponents()
+        powers_exponents()
     elif choice == 7:
-        Calculating_Roots()
+        calculating_roots()
     elif choice == 8:
-        Factorial()
+        factorial()
     elif choice == 9:
-        Trignometry()
+        trigonometry()
     elif choice == 10:
         logarithms()
     elif choice == 11:
-        Eucledian_distance()
+        euclidean_distance()
     elif choice == 12:
-        Area()
+        area()
     else:
         print("\n\n INVALID CHOICE !!!!!! ", end="\n")
         print("\n \n PLEASE ENTER A VALID CHOICE (1-12) ", end="\n\n")
@@ -317,11 +317,11 @@ if __name__ == "__main__":
     for i in tqdm(range(100), desc=" INITIALIZING..."):
         time.sleep(0.01)
         pass
-    Calculator()
+    calculator()
 
     while True:
         Yes_no = input("\n Do You want to continue (Yes or No) ?")
         if Yes_no == "Y" or Yes_no == 'y' or Yes_no == 'Yes' or Yes_no == 'yes':
-            Calculator()
+            calculator()
         else:
             break
