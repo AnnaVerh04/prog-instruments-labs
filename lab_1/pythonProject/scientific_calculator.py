@@ -2,8 +2,9 @@
 # THIS CODE IS MADE BY SHOURYA PANT AND TEJAS DWIVEDI
 
 import math
-from tqdm import tqdm
 import time
+
+from tqdm import tqdm
 
 
 # Thsi function is designed for the INTRODUCTION TO OUR CALCULATOR PROGRAM
