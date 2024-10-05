@@ -37,48 +37,49 @@ def welcome():
 def addition():
     print("How many nums to add")
     number = int(input())
-    sum = 0
+    total = 0
     for x in range(number):
         numbers_to_be_added = list(
             map(int, input(f"Enter number {x + 1}: ").split())
         )
         for y in numbers_to_be_added:
-            sum += y
-    print("\n \n The sum of all numbers is : ", sum, end="\n")
+            total += y
+    print("\n \n The sum of all numbers is : ", total, end="\n")
 
 
 # This function is designed for performing the SUBTRACTION of n numbers
 
 def subtraction():
     print("\n For how many variables you want to do subtraction?", end="\n")
-    No_of_variable = int(input("\n Enter the total number of operands... "))
-    if No_of_variable == 1:
+    no_of_variable = int(input("\n Enter the total number of operands... "))
+    if no_of_variable == 1:
         print(
             "\nInvalid operation. Please provide at least two operands to "
             "perform subtraction.",
             end="\n"
         )
-    elif No_of_variable == 2:
-        Num1 = int(input("Enter first number:  "))
-        Num2 = int(input("Enter second number:  "))
-        difference = Num1 - Num2
+    elif no_of_variable == 2:
+        first_number = int(input("Enter first number:  "))
+        second_number = int(input("Enter second number:  "))
+        difference = first_number - second_number
         print(
-            f"\n\nThe difference between {Num1} and {Num2} is: {difference}",
+            f"\n\nThe difference between {first_number} and {second_number} "
+            f"is: {difference}",
             end="\n"
         )
-    elif No_of_variable == 3:
-        Num1 = int(input("Enter first number:  "))
-        Num2 = int(input("Enter second number:  "))
-        Num3 = int(input("Enter third number:  "))
-        difference = Num1 - Num2 - Num3
+    elif no_of_variable == 3:
+        first_number = int(input("Enter first number:  "))
+        second_number = int(input("Enter second number:  "))
+        third_number = int(input("Enter third number:  "))
+        difference = first_number - second_number - third_number
         print(
-            f"\n\nThe difference between {Num1}, {Num2}, and {Num3} is: "
-            f"{difference}",
+            f"\n\nThe difference between {first_number}, {second_number}, and "
+            f"{third_number} is: {difference}",
             end="\n"
         )
-    elif No_of_variable >= 4:
+    elif no_of_variable >= 4:
         numbers = []
-        for x in range(No_of_variable):
+        for x in range(no_of_variable):
             for i in (input("Enter numbers: " + str(x + 1) + " ").split()):
                 numbers.append(i)
             difference = int(numbers[0])
@@ -106,21 +107,22 @@ def multiplication():
         )
         option = str(input("Yes or NO , enter (Y,N): "))
         if option == 'y' or option == "Y":
-            Number = float(input(
+            number = float(input(
                 "\nEnter the number which you want to multiply with itself: "
             ))
-            result = Number ** 2
+            result = number ** 2
             print(
-                f"\n\nThe multiplication result of {Number} with itself is: "
+                f"\n\nThe multiplication result of {number} with itself is: "
                 f"{result}",
                 end="\n\n"
             )
     elif choice == 2:
-        Number1 = float(input("\n Enter first number: "))
-        Number2 = float(input("\n Enter second number: "))
-        result = Number1 * Number2
+        first_number = float(input("\n Enter first number: "))
+        second_number = float(input("\n Enter second number: "))
+        result = first_number * second_number
         print(
-            f"\n\nThe multiplication of {Number1} and {Number2} is: {result}",
+            f"\n\nThe multiplication of {first_number} and {second_number} "
+            f"is: {result}",
             end="\n\n"
         )
     elif choice >= 3:
@@ -141,34 +143,34 @@ def division():
     print("\n 2. Do the division for the floating point numbers ", end="\n")
     choice = int(input("\n Enter 1 or 2 "))
     if choice == 1:
-        Num1 = int(input("\n Enter the first number (Dividend): "))
-        Num2 = int(input("\n Enter the Second NUmber (Divisor): "))
-        if Num2 == 0:
+        dividend = int(input("\n Enter the first number (Dividend): "))
+        divisor = int(input("\n Enter the second Number (Divisor): "))
+        if divisor == 0:
             print("\n Error!!!", end="\n")
             print(
                 "\n\nThe division of a number by 0 is not possible",
                 end="\n"
             )
         else:
-            Division = Num1 / Num2
+            division = dividend / divisor
             print(
-                f"\n\nThe division of {Num1} and {Num2} is: {Division}",
+                f"\n\nThe division of {dividend} and {divisor} is: {division}",
                 end="\n\n"
             )
     elif choice == 2:
-        Num1 = float(input("Enter the first number (Dividend): "))
-        Num2 = float(input("Enter the second number (Divisor): "))
-        if Num2 == 0:
-            print("\n ERROR!!!", end="\n")
+        dividend = float(input("Enter the first number (Dividend): "))
+        divisor = float(input("Enter the second number (Divisor): "))
+        if divisor == 0:
+            print("\n Error!!!", end="\n")
             print(
                 "\n\nThe division of a number by 0 is not possible",
                 end="\n\n"
             )
         else:
-            Division = Num1 / Num2
+            division = dividend / divisor
             print(
-                f"\n\nThe division between {Num1} and {Num2} is: "
-                f"{Division}",
+                f"\n\nThe division between {dividend} and {divisor} is: "
+                f"{division}",
                 end="\n\n"
             )
     else:
@@ -179,22 +181,23 @@ def division():
 # This funciton is designed for CALCULATING THE MODULUS OF the numbers
 
 def modulus():
-    x = float(input("\n Enter  first number: "))
-    y = float(input("\n Enter divisor: "))
-    modulus = x % y
+    first_number = float(input("\n Enter  first number: "))
+    divisor = float(input("\n Enter divisor: "))
+    result = first_number % divisor
     print(
-        f"\n\nThe modulus between {x} and {y} is: {modulus:.2f}"
+        f"\n\nThe modulus between {first_number} and {divisor} "
+        f"is: {result:.2f}"
     )
 
 
 # This function is designed for CALCULATING THE POWERS taking BASE AND  EXPONENTIAL  values from the user
 
 def powers_exponents():
-    Base = float(input("\nEnter the base number: "))
+    base = float(input("\nEnter the base number: "))
     exponent = float(input("\nEnter the exponent number: "))
-    power = Base ** exponent
+    power = base ** exponent
     print(
-        f"\n\nThe value of {Base} to the power of {exponent} is: {power}",
+        f"\n\nThe value of {base} to the power of {exponent} is: {power}",
         end="\n\n"
     )
 
@@ -202,29 +205,29 @@ def powers_exponents():
 # This function is designed to CALCULATE THE ROOTS OF A NUMBER OR 1/NTH POWER OF A NUMBER
 
 def calculating_roots():
-    Number = float(input("\n Enter the number whose root you want to find: "))
+    number = float(input("\n Enter the number whose root you want to find: "))
     exponent = float(input("\n Which root you want? "))
-    result = pow(Number, 1 / exponent)
+    result = pow(number, 1 / exponent)
     if exponent == 2:
-        print("\n The square root of ", Number, "is: ", result, end="\n")
+        print("\n The square root of ", number, "is: ", result, end="\n")
     elif exponent == 3:
-        print("\n The cube root of ", Number, "is: ", result, end="\n")
+        print("\n The cube root of ", number, "is: ", result, end="\n")
     else:
-        print("\n The nth root of ", Number, "is: ", result, end="\n")
+        print("\n The nth root of ", number, "is: ", result, end="\n")
 
 
 # This function is designed to calculate the FACTORIAL OF A NUMBER
 
 def factorial():
-    factorial = 1
-    Number = float(input(
+    fact_value = 1
+    number = float(input(
         "\nEnter a number whose factorial you want to calculate: "
     ))
-    if (Number >= 1) and Number.is_integer() == True:
-        for fact in range(1, int(Number + 1)):
-            factorial = factorial * fact
+    if (number >= 1) and number.is_integer() == True:
+        for fact in range(1, int(number + 1)):
+            fact_value *= fact
         print(
-            f"\n\nThe factorial of the given number {Number} is: {factorial}",
+            f"\n\nThe factorial of the given number {number} is: {fact_value}",
             end="\n\n"
         )
     else:
@@ -284,23 +287,23 @@ def logarithms():
     print("\n 2. Logs with a base and value", end="\n")
     choice = int(input("\n Enter 1 or 2 "))
     if choice == 1:
-        Base = float(input(
+        base = float(input(
             "\nEnter a base number whose log you want to calculate: "
         ))
         print(
-            f"\n\nThe natural log of the number {Base} is: "
-            f"{math.log(Base)}"
+            f"\n\nThe natural log of the number {base} is: "
+            f"{math.log(base)}"
         )
     elif choice == 2:
-        Base = float(input(
+        base = float(input(
             "\nEnter a base number whose log you want to calculate: "
         ))
-        Exponent = float(input(
+        exponent = float(input(
             "\nEnter an exponent number which will be the log base: "
         ))
         print(
-            f"\n\nThe log of {Base} with log base {Exponent} is: "
-            f"{math.log(Base, Exponent)}",
+            f"\n\nThe log of {base} with log base {exponent} is: "
+            f"{math.log(base, exponent)}",
             end="\n\n"
         )
     else:
@@ -315,10 +318,10 @@ def euclidean_distance():
     x2 = float(input("\n Enter the x coordinate of the second point (x2): "))
     y1 = float(input("\n Enter the y coordinate of the first point (y1): "))
     y2 = float(input("\n Enter the y coordinate of the second point (y2): "))
-    Eucledian_distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
     print(
         f"\n\nThe Euclidean distance between two points ({x1}, {y1}) "
-        f"and ({x2}, {y2}) is: {Eucledian_distance}",
+        f"and ({x2}, {y2}) is: {distance}",
         end="\n\n"
     )
 
@@ -351,9 +354,9 @@ def area():
             end="\n"
         )
     elif choice == 4:
-        Radius = float(input("\n Enter The radius of circle: "))
+        radius = float(input("\n Enter The radius of circle: "))
         print(
-            f"\n\nThe area of the circle is: {math.pi * Radius * Radius:.4f}",
+            f"\n\nThe area of the circle is: {math.pi * radius * radius:.4f}",
             end="\n"
         )
     elif choice == 5:
@@ -442,8 +445,8 @@ if __name__ == "__main__":
     calculator()
 
     while True:
-        Yes_no = input("\n Do you want to continue (Yes or No) ?")
-        if Yes_no in ["Y", "y", "Yes", "yes"]:
+        yes_no = input("\n Do you want to continue (Yes or No) ?")
+        if yes_no in ["Y", "y", "Yes", "yes"]:
             calculator()
         else:
             break
