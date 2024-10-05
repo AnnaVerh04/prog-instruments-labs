@@ -34,7 +34,7 @@ def welcome():
         "|\n| \t     Tejas dwivedi(0105CS191123) \t\t|",
         end="\n\n"
     )
-    for i in tqdm(range(100), desc="Loading..."):
+    for _ in tqdm(range(100), desc="Loading..."):
         time.sleep(0.02)
     print("----------------------------------------------------------")
 
@@ -103,7 +103,7 @@ def subtraction():
     elif no_of_variable >= 4:
         numbers = []
         for x in range(no_of_variable):
-            for i in (input("Enter numbers: " + str(x + 1) + " ").split()):
+            for _ in (input("Enter numbers: " + str(x + 1) + " ").split()):
                 numbers.append(i)
             difference = int(numbers[0])
             for number in numbers[1:]:
@@ -159,10 +159,10 @@ def multiplication():
     elif choice >= 3:
         numbers = []
         for x in range(choice):
-            for i in (input("Enter numbers: " + str(x + 1) + " ").split()):
+            for _ in (input("Enter numbers: " + str(x + 1) + " ").split()):
                 numbers.append(i)
             result = 1
-            for x in numbers:
+            for _ in numbers:
                 result = result * float(x)
         print("\n \n The multiplication of numbers is: ", result, end="\n\n")
 
@@ -294,7 +294,7 @@ def factorial():
     number = float(input(
         "\nEnter a number whose factorial you want to calculate: "
     ))
-    if (number >= 1) and number.is_integer() == True:
+    if number >= 1 and number.is_integer():
         for fact in range(1, int(number + 1)):
             fact_value *= fact
         print(
@@ -303,7 +303,7 @@ def factorial():
         )
     else:
         print("\n")
-        for i in tqdm(range(100), desc=" Error !!!!..."):
+        for _ in tqdm(range(100), desc=" Error !!!!..."):
             time.sleep(0.01)
         print(
             "\nThe factorial cannot be calculated for negative numbers and "
@@ -337,26 +337,28 @@ def trigonometry():
 
     choice = float(input("\n Enter choice (1-6): "))
     x = float(input("\n Enter the values in degrees: "))
-    x = (x / 180) * 3.14159265359
-    if (choice == 1):
-        print(math.sin(x), end="\n")
-    elif (choice == 2):
-        print(math.cos(x), end="\n")
-    elif (choice == 3):
-        print(math.tan(x), end="\n")
-    elif (choice == 4):
-        print(1 / math.cos(x), end="\n")
-    elif (choice == 5):
-        print(1 / math.sin(x), end="\n")
-    elif (choice == 6):
-        print(1 / math.tan(x), end="\n")
-    else:
-        print(
-            "\n\nInvalid choice!!!!\n"
-            "Please enter a valid choice (1-6)",
-            end="\n "
-        )
-    return (0)
+    x = (x / 180) * math.pi
+    match choice:
+        case 1:
+            print(math.sin(x), end="\n")
+        case 2:
+            print(math.cos(x), end="\n")
+        case 3:
+            print(math.tan(x), end="\n")
+        case 4:
+            print(1 / math.cos(x), end="\n")
+        case 5:
+            print(1 / math.sin(x), end="\n")
+        case 6:
+            print(1 / math.tan(x), end="\n")
+        case _:
+            print(
+                "\n\nInvalid choice!!!!\n"
+                "Please enter a valid choice (1-6)",
+                end="\n "
+            )
+
+    return 0
 
 
 def logarithms():
@@ -440,40 +442,41 @@ def area():
         end="\n"
     )
     choice = int(input("\n Enter a choice (1-5)"))
-    if choice == 1:
-        length = float(input("\n Enter The length of rectangle: "))
-        breadth = float(input("\n Enter The breadth of rectangle: "))
-        print("\n\n The area of rectangle is: ", length * breadth, end="\n")
-    elif choice == 2:
-        side = float(input("\n Enter The side of square: "))
-        print("\n\n The area of square is : ", side * side, end="\n")
-    elif choice == 3:
-        height = float(input("\n Enter The height of triangle: "))
-        breadth = float(input("\n Enter The breadth of triangle: "))
-        print(
-            f"\n\nThe area of the rectangle is: {height * breadth}",
-            end="\n"
-        )
-    elif choice == 4:
-        radius = float(input("\n Enter The radius of circle: "))
-        print(
-            f"\n\nThe area of the circle is: {math.pi * radius * radius:.4f}",
-            end="\n"
-        )
-    elif choice == 5:
-        no_of_sides = int(input(
-            "\nEnter the number of sides of the regular polygon: "
-        ))
-        length = float(input("\n Enter length of side:"))
-        ans = (length ** 2 * no_of_sides) / (
-                4 * math.tan(math.pi / no_of_sides)
-        )
-        print("{:.4f}".format(ans))
-    else:
-        print(
-            "\n\nInvalid choice!!! Please enter a valid choice (1-5)",
-            end="\n"
-        )
+    match choice:
+        case 1:
+            length = float(input("\n Enter The length of rectangle: "))
+            breadth = float(input("\n Enter The breadth of rectangle: "))
+            print("\n\n The area of rectangle is: ", length * breadth, end="\n")
+        case 2:
+            side = float(input("\n Enter The side of square: "))
+            print("\n\n The area of square is : ", side * side, end="\n")
+        case 3:
+            height = float(input("\n Enter The height of triangle: "))
+            breadth = float(input("\n Enter The breadth of triangle: "))
+            print(
+                f"\n\nThe area of the triangle is: {0.5 * height * breadth}",
+                end="\n"
+            )
+        case 4:
+            radius = float(input("\n Enter The radius of circle: "))
+            print(
+                f"\n\nThe area of the circle is: {math.pi * radius * radius:.4f}",
+                end="\n"
+            )
+        case 5:
+            no_of_sides = int(input(
+                "\nEnter the number of sides of the regular polygon: "
+            ))
+            length = float(input("\n Enter length of side:"))
+            ans = (length ** 2 * no_of_sides) / (
+                    4 * math.tan(math.pi / no_of_sides)
+            )
+            print("{:.4f}".format(ans))
+        case _:
+            print(
+                "\n\nInvalid choice!!! Please enter a valid choice (1-5)",
+                end="\n"
+            )
 
 
 def calculator():
@@ -507,36 +510,37 @@ def calculator():
         "\n12. Calculating area of various shapes and polygons",
         end="\n"
     )
-    print("\n\n Please enter a valid choice (1-12) ", end="\n\n")
+
     choice = int(input("Please Enter a Choice(1-12) what you want to do??"))
 
-    if choice == 1:
-        addition()
-    elif choice == 2:
-        subtraction()
-    elif choice == 3:
-        multiplication()
-    elif choice == 4:
-        division()
-    elif choice == 5:
-        modulus()
-    elif choice == 6:
-        powers_exponents()
-    elif choice == 7:
-        calculating_roots()
-    elif choice == 8:
-        factorial()
-    elif choice == 9:
-        trigonometry()
-    elif choice == 10:
-        logarithms()
-    elif choice == 11:
-        euclidean_distance()
-    elif choice == 12:
-        area()
-    else:
-        print("\n\n Invalid choice !!!!!! ", end="\n")
-        print("\n \n Please enter a valid choice (1-12) ", end="\n\n")
+    match choice:
+        case 1:
+            addition()
+        case 2:
+            subtraction()
+        case 3:
+            multiplication()
+        case 4:
+            division()
+        case 5:
+            modulus()
+        case 6:
+            powers_exponents()
+        case 7:
+            calculating_roots()
+        case 8:
+            factorial()
+        case 9:
+            trigonometry()
+        case 10:
+            logarithms()
+        case 11:
+            euclidean_distance()
+        case 12:
+            area()
+        case _:
+            print("\n\nInvalid choice !!!!!! ", end="\n")
+            print("\nPlease enter a valid choice (1-12) ", end="\n\n")
 
 
 if __name__ == "__main__":
