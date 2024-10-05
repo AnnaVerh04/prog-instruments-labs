@@ -1,5 +1,5 @@
-# IMPORTING LIABRARIES
-# THIS CODE IS MADE BY SHOURYA PANT AND TEJAS DWIVEDI
+# Importing libraries
+# This code is made by Shourya Pant and Tejas Dwivedi
 
 import math
 import time
@@ -7,9 +7,16 @@ import time
 from tqdm import tqdm
 
 
-# This function is designed for the INTRODUCTION TO OUR CALCULATOR PROGRAM
-
 def welcome():
+    """
+    Display a welcome message for the scientific calculator application.
+
+    This function prints a decorative introduction to the calculator app,
+    including the names and identifiers of the developers.
+
+    Returns:
+        None
+    """
     print(
         "\n\n---------------------------------------------------------",
         end=""
@@ -32,9 +39,17 @@ def welcome():
     print("----------------------------------------------------------")
 
 
-# This function is designed for performing the ADDITION OF n numbers
-
 def addition():
+    """
+    Perform the addition of n numbers provided by the user.
+
+    This function prompts the user to enter how many numbers they want to add.
+    It then collects the specified numbers from the user, allowing multiple
+    entries for each number, and calculates the total sum.
+
+    Returns:
+        None
+    """
     print("How many nums to add")
     number = int(input())
     total = 0
@@ -47,9 +62,17 @@ def addition():
     print("\n \n The sum of all numbers is : ", total, end="\n")
 
 
-# This function is designed for performing the SUBTRACTION of n numbers
-
 def subtraction():
+    """
+    Perform the subtraction of n numbers provided by the user.
+
+    This function prompts the user to enter the total number of operands
+    for subtraction. It handles different cases based on the number of
+    operands.
+
+    Returns:
+        None
+    """
     print("\n For how many variables you want to do subtraction?", end="\n")
     no_of_variable = int(input("\n Enter the total number of operands... "))
     if no_of_variable == 1:
@@ -91,9 +114,17 @@ def subtraction():
         )
 
 
-# This function is designed to perform MULTIPLICATION of two or more numbers
-
 def multiplication():
+    """
+    Perform the multiplication of two or more numbers provided by the user.
+
+    This function prompts the user to enter the total number of multiplicands
+    for multiplication. It handles different cases based on the number of
+    operands.
+
+    Returns:
+        None
+    """
     print("\n How many numbers do you want to get multiply ???", end="\n")
     choice = int(input("\n Enter total number of multiplicands:"))
     if choice == 1:
@@ -136,9 +167,17 @@ def multiplication():
         print("\n \n The multiplication of numbers is: ", result, end="\n\n")
 
 
-# This function is designed to perform DIVISION of two numbers
-
 def division():
+    """
+    Perform the division of two numbers provided by the user.
+
+    This function prompts the user to choose between performing division
+    with integers or floating point numbers. It handles different cases based
+    on the user's choice.
+
+    Returns:
+        None
+    """
     print("\n 1. Do the division for the integers numbers ", end="\n")
     print("\n 2. Do the division for the floating point numbers ", end="\n")
     choice = int(input("\n Enter 1 or 2 "))
@@ -178,9 +217,17 @@ def division():
         print("Invalid choice please choose between 1 or 2", end="\n\n")
 
 
-# This funciton is designed for CALCULATING THE MODULUS OF the numbers
-
 def modulus():
+    """
+    Calculate the modulus (remainder) of two numbers provided by the user.
+
+    This function prompts the user to enter two numbers: the first number and
+    the divisor. It calculates the modulus of the first number with respect to
+    the divisor and displays the result.
+
+    Returns:
+        None
+    """
     first_number = float(input("\n Enter  first number: "))
     divisor = float(input("\n Enter divisor: "))
     result = first_number % divisor
@@ -190,9 +237,17 @@ def modulus():
     )
 
 
-# This function is designed for CALCULATING THE POWERS taking BASE AND  EXPONENTIAL  values from the user
-
 def powers_exponents():
+    """
+    Calculate the power of a base number raised to a specified exponent.
+
+    This function prompts the user to enter a base number and an exponent.
+    It calculates the result of raising the base to the power of the exponent
+    and displays the result.
+
+    Returns:
+        None
+    """
     base = float(input("\nEnter the base number: "))
     exponent = float(input("\nEnter the exponent number: "))
     power = base ** exponent
@@ -202,9 +257,17 @@ def powers_exponents():
     )
 
 
-# This function is designed to CALCULATE THE ROOTS OF A NUMBER OR 1/NTH POWER OF A NUMBER
-
 def calculating_roots():
+    """
+    Calculate the roots of a number or the 1/nth power of a number.
+
+    This function prompts the user to enter a number and the degree of the
+    root they wish to calculate. It computes the nth root of the number using
+    the formula and displays the result.
+
+    Returns:
+        None
+    """
     number = float(input("\n Enter the number whose root you want to find: "))
     exponent = float(input("\n Which root you want? "))
     result = pow(number, 1 / exponent)
@@ -216,9 +279,17 @@ def calculating_roots():
         print("\n The nth root of ", number, "is: ", result, end="\n")
 
 
-# This function is designed to calculate the FACTORIAL OF A NUMBER
-
 def factorial():
+    """
+    Calculate the factorial of an integer.
+
+    This function prompts the user to enter a number and calculates its
+    factorial if the number is a non-negative integer. The factorial is
+    computed by multiplying all positive integers up to the specified number.
+
+    Returns:
+        None
+    """
     fact_value = 1
     number = float(input(
         "\nEnter a number whose factorial you want to calculate: "
@@ -241,9 +312,18 @@ def factorial():
         )
 
 
-# This function is designed to calculate the TRIGNOMETRY
-
 def trigonometry():
+    """
+    Calculate and display the result of a chosen trigonometric function.
+
+    This function prompts the user to select a trigonometric function from
+    a list of options (sin, cos, tan, sec, cosec, cot) and enter an angle
+    in degrees. It converts the angle from degrees to radians and computes
+    the result based on the selected function.
+
+    Returns:
+        int: Returns 0 upon completion of the function.
+    """
     print(
         "\nWhich trigonometric function do you want to use\n"
         "1. Sin\n"
@@ -279,9 +359,16 @@ def trigonometry():
     return (0)
 
 
-# This function  is designed for calculating the LOGARITHMIC VALUES
-
 def logarithms():
+    """
+    Calculate logarithmic values based on user input.
+
+    This function prompts the user to choose between two types of logarithmic
+    calculations.
+
+    Returns:
+        None
+    """
     print("\n Which type of logarithms do you want to calculate?", end="\n")
     print("\n 1.  Natural logs, (Base=e or ln)", end="\n")
     print("\n 2. Logs with a base and value", end="\n")
@@ -311,9 +398,16 @@ def logarithms():
         print("Enter a choice between 1 or 2 ")
 
 
-# This function  is designed for calculating the EUCLEDIAN DISTANCE BETWEEN TWO POINTS
-
 def euclidean_distance():
+    """
+    Calculate the Euclidean distance between two points in a 2D space.
+
+    This function prompts the user to enter the coordinates of two points
+    (x1, y1) and (x2, y2). It calculates the Euclidean distance.
+
+    Returns:
+        None
+    """
     x1 = float(input("\n Enter the x coordinate of the first point (x1): "))
     x2 = float(input("\n Enter the x coordinate of the second point (x2): "))
     y1 = float(input("\n Enter the y coordinate of the first point (y1): "))
@@ -326,9 +420,16 @@ def euclidean_distance():
     )
 
 
-# This function is designed to CALCULATE AREA OF DIFFERENT POLYGONS
-
 def area():
+    """
+    Calculate and display the area of various geometric figures.
+
+    This function prompts the user to select a geometric figure from a list
+    of options and then calculates the area based on the user's input.
+
+    Returns:
+        None
+    """
     print(
         "\nWhich figure area do you want to calculate?\n"
         "1. Rectangle\n"
@@ -375,9 +476,16 @@ def area():
         )
 
 
-#  THE MAIN MENU
-
 def calculator():
+    """
+    Display a calculator menu and perform the selected mathematical operation.
+
+    This function presents a menu of various mathematical operations that
+    the user can choose.
+
+    Returns:
+        None
+    """
     welcome()
     print("\n What do you want to do with our calculator?", end="\n")
     print("\n Main menu: ", end="\n\n")
@@ -430,8 +538,6 @@ def calculator():
         print("\n\n Invalid choice !!!!!! ", end="\n")
         print("\n \n Please enter a valid choice (1-12) ", end="\n\n")
 
-
-# THE MAIN FUNCITON
 
 if __name__ == "__main__":
 
