@@ -1,4 +1,9 @@
 import json
+import logging
+
+from logger import configure_logging
+
+configure_logging()
 
 
 def read_json(path: str) -> dict:
@@ -10,11 +15,12 @@ def read_json(path: str) -> dict:
     try:
         with open(path, 'r', encoding='UTF-8') as file:
             data = json.load(file)
+        logging.info(f"Успешно прочитан файл: {path}")
         return data
     except FileNotFoundError as e:
-        print(f"Файл не найден: {e}")
+        logging.error(f"Файл не найден: {e}")
     except Exception as e:
-        print(f"При чтении файла произошла ошибка: {str(e)}")
+        logging.error(f"При чтении файла произошла ошибка: {str(e)}")
 
 
 def write_card_numbers_to_json(path: str, keys: list) -> None:
@@ -31,5 +37,6 @@ def write_card_numbers_to_json(path: str, keys: list) -> None:
                 file.write(', ')
             file.write(keys[-1])
             file.write(']\n}')
+        logging.info(f"Успешно записаны ключи в файл: {path}")
     except Exception as e:
-        print(f"Произошла ошибка при работе с файлом {file}: {e}")
+        logging.error(f"Произошла ошибка при работе с файлом {path}: {e}")
